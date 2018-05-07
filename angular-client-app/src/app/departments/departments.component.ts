@@ -7,11 +7,11 @@ import { DepartmentService } from './shared/department.service'
   styleUrls: ['./departments.component.css'],
   providers: [DepartmentService]
 })
+
 export class DepartmentsComponent implements OnInit {
 
   constructor(private departmentService : DepartmentService) { }
 
   ngOnInit() {
   }
-
 }
