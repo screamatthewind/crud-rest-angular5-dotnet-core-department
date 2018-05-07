@@ -1,0 +1,14 @@
+<table class="table table-sm table-hover">
+  <tr *ngFor="let department of departmentService.departmentList">
+    <td>{{department.name}}</td>
+    <td>{{department.groupName}}</td>
+    <td>
+      <a class="btn" (click)="showForEdit(department)">
+        <i class="fa fa-pencil-square-o"></i>
+      </a>
+      <a class="btn text-danger" (click)="onDelete(department.DepartmentID)">
+        <i class="fa fa-trash-o"></i>
+      </a>
+    </td>
+  </tr>
+</table>

@@ -13,12 +13,12 @@ namespace crud_rest_angular5_dotnet_core_department.Models
 
         [Required]
         [StringLength(50)]
-        public string Name { get; set; }
+        public string name { get; set; }
 
         [Required]
         [StringLength(50)]
-        public string GroupName { get; set; }
+        public string groupName { get; set; }
 
-        public DateTime ModifiedDate { get; set; }
+        public DateTime modifiedDate { get; set; }
     }
 }

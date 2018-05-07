@@ -1,0 +1,28 @@
+<form class="dept-form" #departmentForm="ngForm" (ngSubmit)="onSubmit(departmentForm)">
+  <input type="hidden" name="DepartmentID" #DepartmentID="ngModel" [(ngModel)]="departmentService.selectedDepartment.DepartmentID">
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <input class="form-control" name="Name" #Name="ngModel" [(ngModel)]="departmentService.selectedDepartment.name"
+        placeholder="Department Name" required>
+      <div class="validation-error" *ngIf="Name.invalid && Name.touched">This Field is Required.</div>
+    </div>
+    <div class="form-group col-md-6">
+      <input class="form-control" name="GroupName" #GroupName="ngModel" [(ngModel)]="departmentService.selectedDepartment.groupName" placeholder="Group Name"
+        required>
+      <div class="validation-error" *ngIf="GroupName.invalid && GroupName.touched">This Field is Required.</div>
+    </div>
+  </div>
+  <div class="form-group">
+    <input class="form-control" name="ModifiedDate" #ModifiedDate="ngModel" [(ngModel)]="departmentService.selectedDepartment.modifiedDate" placeholder="ModifiedDate">
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-8">
+      <button [disabled]="!departmentForm.valid" type="submit" class="btn btn-lg btn-block btn-info">
+        <i class="fa fa-floppy-o"></i> Submit</button>
+    </div>
+    <div class="form-group col-md-4">
+      <button type="button" class="btn btn-lg btn-block btn-secondary" (click)="resetForm(departmentForm)">
+        <i class="fa fa-repeat"></i> Reset</button>
+    </div>
+  </div>
+</form>

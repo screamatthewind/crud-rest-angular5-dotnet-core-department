@@ -9,9 +9,11 @@ using System.Net.Http;
 using System.Web.Http;
 using System.Web.Http.Description;
 using crud_rest_angular5_dotnet_core_department.Models;
+using System.Web.Http.Cors;
 
 namespace crud_rest_angular5_dotnet_core_department.Controllers
 {
+    [EnableCors(origins: "http://localhost:4200", headers: "*", methods: "*")]
     public class DepartmentController : ApiController
     {
         private DepartmentContext db = new DepartmentContext();
@@ -74,10 +76,10 @@ namespace crud_rest_angular5_dotnet_core_department.Controllers
         [ResponseType(typeof(Department))]
         public IHttpActionResult PostDepartment(Department department)
         {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
+            //if (!ModelState.IsValid)
+            //{
+            //    return BadRequest(ModelState);
+            //}
 
             db.Department.Add(department);
             db.SaveChanges();
